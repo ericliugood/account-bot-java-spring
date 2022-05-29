@@ -144,9 +144,17 @@ class MybotApplicationTests {
 
     @Test
     void FindAccountingLedgerById(){
-        AccountingLedger accountingLedger = accountingLedgerService.findAccountingLedgerById(5L);
 
-        System.out.println(accountingLedger);
+
+
+
+    }
+
+    @Test
+    void Sum(){
+        int accountingLedgertotals = accountingLedgerService.selectTotals();
+
+        System.out.println(accountingLedgertotals);
 
 
 

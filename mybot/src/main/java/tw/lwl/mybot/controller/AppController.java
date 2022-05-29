@@ -40,10 +40,12 @@ public class AppController {
         List<Account>  accounts = accountService.findAllAccount();
         List<Ledger> ledgers = ledgerService.findAllLedger();
         List<AccountingLedger> accountingLedgers = accountingLedgerService.findAllAccountingLedger();
+        int totals = accountingLedgerService.selectTotals();
 
         model.addAttribute("accounts", accounts);
         model.addAttribute("ledgers", ledgers);
         model.addAttribute("accountingLedgers",accountingLedgers);
+        model.addAttribute("totals",totals);
 
         return "alltrans";
     }

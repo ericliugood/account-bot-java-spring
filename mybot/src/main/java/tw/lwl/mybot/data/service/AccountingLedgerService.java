@@ -19,4 +19,6 @@ public interface AccountingLedgerService {
 //
     public AccountingLedger findAccountingLedgerById (Long id);
 
+    public int selectTotals();
+
 }

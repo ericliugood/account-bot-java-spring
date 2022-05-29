@@ -66,4 +66,9 @@ public class AccountingLedgerServiceImpl implements AccountingLedgerService {
     public AccountingLedger findAccountingLedgerById(Long id) {
         return accountingLedgerDao.findById(id).orElseThrow(RuntimeException::new);
     }
+
+    @Override
+    public int selectTotals() {
+        return accountingLedgerDao.selectTotals();
+    }
 }
