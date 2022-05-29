@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>所有交易</title>
+</head>
+<body>
+<a href="/accountform">交易帳戶新增</a>
+<p></p>
+<a href="/ledgerform">交易項目新增</a>
+<p></p>
+<a href="/accountingledgerform">記帳</a>
+<p></p>
+
+
+
+<p>帳戶</p>
+
+<table border="1px">
+    <tr>
+        <td>帳戶名稱</td>
+        <td>帳戶描述</td>
+    </tr>
+    <tr th:each="f:${accounts}">
+        <br/>
+        <td th:text="${f.title}"></td>
+        <td th:text="${f.description}"></td>
+    </tr>
+</table>
+
+<p></p>
+
+<p>項目</p>
+
+<table border="1px">
+    <tr>
+        <td>項目名稱</td>
+        <td>項目描述</td>
+        <td>收入or支出</td>
+    </tr>
+    <tr th:each="f:${ledgers}">
+        <br/>
+        <td th:text="${f.title}"></td>
+        <td th:text="${f.description}"></td>
+        <td th:if="${f.expenditure} == false">收入</td>
+        <td th:if="${f.expenditure} == true">支出</td>
+    </tr>
+</table>
+
+<p></p>
+
+<p>交易</p>
+
+<table border="1px">
+    <tr>
+        <td>交易項目</td>
+        <td>使用帳戶</td>
+        <td>收出金額</td>
+    </tr>
+    <tr th:each="f:${accountingLedgers}">
+        <br/>
+        <td th:text="${f.ledger.title}"></td>
+        <td th:text="${f.account.title}"></td>
+        <td th:text="${f.money}"></td>
+
+    </tr>
+</table>
+
+
+
+</body>
+</html>

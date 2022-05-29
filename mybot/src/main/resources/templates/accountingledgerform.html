@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增交易</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/addaccountingledger}" th:object="${accountingLedger}" method="post">
+    <table border="1px">
+        <tr><td>帳戶名稱</td><td>
+            <select th:field="*{account}" class="form-control" >
+                <option th:each="a: ${accounts}" th:value="${a.id}" th:text="${a.title}"></option>
+            </select></td></tr>
+        <tr><td>項目名稱</td><td>
+            <select th:field="*{ledger}" class="form-control" >
+                <option th:each="l: ${ledgers}" th:value="${l.id}" th:text="${l.title}"></option>
+            </select>
+        </td></tr>
+        <tr><td>多少元</td><td><input type="number" th:field="*{money}"/></td></tr>
+    </table>
+
+
+    <input type="submit"/>
+</form>
+
+<p></p>
+
+<a href="/alltrans">回首頁</a>
+
+
+</body>
+</html>

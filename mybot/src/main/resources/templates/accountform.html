@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增帳戶表單</title>
+</head>
+<body>
+
+<h2>新增帳戶表單</h2>
+<form action="#" th:action="@{/addaccount}" th:object="${account}" method="post">
+    <table border="1px">
+        <tr><td>帳戶名稱</td><td><input type="text" th:field="*{title}"/></td></tr>
+        <tr><td>帳戶敘述</td><td><input type="text" th:field="*{description}"/></td></tr>
+    </table>
+
+
+    <input type="submit"/>
+</form>
+
+<p></p>
+
+<a href="/alltrans">回首頁</a>
+
+</body>
+</html>

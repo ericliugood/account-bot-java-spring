@@ -1,14 +1,12 @@
-package tw.lwl.mybot.data.doo.service.impl;
+package tw.lwl.mybot.data.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tw.lwl.mybot.data.dao.AccountDao;
 import tw.lwl.mybot.data.dao.AccountingLedgerDao;
 import tw.lwl.mybot.data.dao.LedgerDao;
-import tw.lwl.mybot.data.doo.Account;
 import tw.lwl.mybot.data.doo.AccountingLedger;
-import tw.lwl.mybot.data.doo.Ledger;
-import tw.lwl.mybot.data.doo.service.AccountingLedgerService;
+import tw.lwl.mybot.data.service.AccountingLedgerService;
 
 import java.util.List;
 
@@ -26,7 +24,16 @@ public class AccountingLedgerServiceImpl implements AccountingLedgerService {
 
     @Override
     public AccountingLedger addAccountingLedger(AccountingLedger accountingLedger) {
-
+        if(accountingLedger.getLedger().getExpenditure()==true){
+            if(accountingLedger.getMoney()>0){
+                accountingLedger.setMoney(accountingLedger.getMoney()*(-1));
+            }
+        }
+        else{
+            if(accountingLedger.getMoney()<0){
+                accountingLedger.setMoney(accountingLedger.getMoney()*(-1));
+            }
+        }
 
 
         return accountingLedgerDao.save(accountingLedger);

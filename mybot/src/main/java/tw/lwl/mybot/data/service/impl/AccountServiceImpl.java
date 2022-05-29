@@ -1,10 +1,10 @@
-package tw.lwl.mybot.data.doo.service.impl;
+package tw.lwl.mybot.data.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tw.lwl.mybot.data.dao.AccountDao;
 import tw.lwl.mybot.data.doo.Account;
-import tw.lwl.mybot.data.doo.service.AccountService;
+import tw.lwl.mybot.data.service.AccountService;
 
 import java.util.List;
 

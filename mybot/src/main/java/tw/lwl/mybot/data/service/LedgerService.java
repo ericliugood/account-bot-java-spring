@@ -1,4 +1,4 @@
-package tw.lwl.mybot.data.doo.service;
+package tw.lwl.mybot.data.service;
 
 import tw.lwl.mybot.data.doo.Ledger;
 

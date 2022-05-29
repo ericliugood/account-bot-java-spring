@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增交易項目</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/addledger}" th:object="${ledger}" method="post">
+    <table border="1px">
+        <tr><td>項目名稱</td><td><input type="text" th:field="*{title}"/></td></tr>
+        <tr><td>項目敘述</td><td><input type="text" th:field="*{description}"/></td></tr>
+        <tr><td>費用V收入X</td><td><input type="checkbox" th:field="*{expenditure}"/></td></tr>
+    </table>
+
+
+    <input type="submit"/>
+</form>
+
+<p></p>
+
+<a href="/alltrans">回首頁</a>
+
+</body>
+</html>
